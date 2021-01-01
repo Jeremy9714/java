@@ -5,6 +5,7 @@ package day03.test6;
 public class StarTest {
 
 	public static void main(String[] args) {
+		//代理模式不暴露被代理对象
 		RealStar realStar = new RealStar();
 		Proxy proxy = new Proxy(realStar);
 		proxy.signContract();
