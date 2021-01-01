@@ -23,17 +23,17 @@ interface CompareCircle{
 
 class Circle{
 	
-	private double radius;
+	private Double radius;
 	public Circle() {
 	}
-	public Circle(double radius) {
+	public Circle(Double radius) {
 		this();
 		this.radius=radius;
 	}
-	public double getRadius() {
+	public Double getRadius() {
 		return radius;
 	}
-	public void setRadius(double radius) {
+	public void setRadius(Double radius) {
 		this.radius = radius;
 	}
 }
@@ -48,13 +48,15 @@ class CompareCircleDemo extends Circle implements CompareCircle{
 	public int compareTo(Object o) {
 		if(o instanceof CompareCircleDemo) {
 			CompareCircleDemo c = (CompareCircleDemo) o;
-			if(c.getRadius()>this.getRadius()) {
-				return -1;
-			}else if(c.getRadius()<this.getRadius()) {
-				return 1;
-			}else {
-				return 0;
-			}
+//			if(c.getRadius()>this.getRadius()) {
+//				return -1;
+//			}else if(c.getRadius()<this.getRadius()) {
+//				return 1;
+//			}else {
+//				return 0;
+//			}
+			//使用Double包装类自带的compareTo方法进行比较
+			return this.getRadius().compareTo(c.getRadius());
 		}else {
 			throw new RuntimeException("类型不匹配");
 		}
