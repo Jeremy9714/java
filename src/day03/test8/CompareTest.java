@@ -1,0 +1,62 @@
+package day03.test8;
+
+public class CompareTest {
+
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+		CompareCircleDemo c1 = new CompareCircleDemo(3.4);
+		CompareCircleDemo c2 = new CompareCircleDemo(3.6);
+		int compare = c1.compareTo(c2);
+		if(compare>0) {
+			System.out.println("c1半径更长");
+		}else if(compare<0) {
+			System.out.println("c2半径更长");
+		}else {
+			System.out.println("c1和c2半径一样长");
+		}
+	}
+}
+
+interface CompareCircle{
+	int compareTo(Object o);
+}
+
+class Circle{
+	
+	private double radius;
+	public Circle() {
+	}
+	public Circle(double radius) {
+		this();
+		this.radius=radius;
+	}
+	public double getRadius() {
+		return radius;
+	}
+	public void setRadius(double radius) {
+		this.radius = radius;
+	}
+}
+
+class CompareCircleDemo extends Circle implements CompareCircle{
+	
+	public CompareCircleDemo(double radius) {
+		super(radius);
+	}
+	
+	@Override
+	public int compareTo(Object o) {
+		if(o instanceof CompareCircleDemo) {
+			CompareCircleDemo c = (CompareCircleDemo) o;
+			if(c.getRadius()>this.getRadius()) {
+				return -1;
+			}else if(c.getRadius()<this.getRadius()) {
+				return 1;
+			}else {
+				return 0;
+			}
+		}else {
+			throw new RuntimeException("类型不匹配");
+		}
+	}
+}
