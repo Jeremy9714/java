@@ -6,13 +6,19 @@ public class CompareTest {
 		// TODO 自动生成的方法存根
 		CompareCircleDemo c1 = new CompareCircleDemo(3.4);
 		CompareCircleDemo c2 = new CompareCircleDemo(3.6);
-		int compare = c1.compareTo(c2);
-		if(compare>0) {
+		int compareValue = c1.compareTo(c2);
+		if(compareValue>0) {
 			System.out.println("c1半径更长");
-		}else if(compare<0) {
+		}else if(compareValue<0) {
 			System.out.println("c2半径更长");
 		}else {
 			System.out.println("c1和c2半径一样长");
+		}
+		try {
+			compareValue = c1.compareTo(new String("AA"));
+			System.out.println(compareValue);
+		}catch(Exception e) {
+			System.out.println(e.getMessage());
 		}
 	}
 }
