@@ -14,6 +14,7 @@ public class ThrowsTest {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		//处理过异常的方法就不会再抛出异常
 		method2();
 	}
 	
@@ -29,6 +30,7 @@ public class ThrowsTest {
 		method();
 	}
 
+	//throws抛出可能出现的异常类型
 	public static void method() throws FileNotFoundException, IOException {
 		File file = new File("hello.txt");
 		FileInputStream fis = new FileInputStream(file);
