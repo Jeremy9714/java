@@ -27,6 +27,7 @@ class SuperClass{
 }
 
 class SubClass extends SuperClass{
+	//子类重写的方法抛出的异常类型要小于等于父类抛出的异常类型
 	public void method() throws FileNotFoundException{
 		System.out.println("SubClass");
 	}
