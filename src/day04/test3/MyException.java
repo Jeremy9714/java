@@ -8,7 +8,7 @@ package day04.test3;
  */
 public class MyException extends Exception{
 	//序列版本号
-	static final long serialVersionUID = -7034897190245766939L;
+	static final long serialVersionUID = -2234897190245766939L;
 	
 	public MyException() {
 	}
