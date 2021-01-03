@@ -87,13 +87,4 @@ public class NameListService {
 		throw new TeamException("错误的id信息");
 	}
 
-//	public static void main(String[] args) {
-//		try {
-//			NameListService n = new NameListService();
-//			n.getAllEmployees();
-//			n.getEmployee(0);
-//		} catch (TeamException e) {
-//			System.out.println(e.getMessage());
-//		}
-//	}
 }
