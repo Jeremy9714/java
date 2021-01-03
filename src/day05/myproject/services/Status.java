@@ -17,4 +17,8 @@ public class Status {
 	public String getName() {
 		return NAME;
 	}
+	
+	public String toString() {
+		return getName();
+	}
 }

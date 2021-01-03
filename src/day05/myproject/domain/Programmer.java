@@ -43,7 +43,7 @@ public class Programmer extends Employee {
 	@Override
 	public String toString() {
 		// TODO 自动生成的方法存根
-		return getDetails() + "\t程序员\t" + getStatus().getName() + "\t\t\t" + equipment.getDescription();
+		return getDetails() + "\t程序员\t" + getStatus() + "\t\t\t" + equipment.getDescription();
 	}
 
 }
