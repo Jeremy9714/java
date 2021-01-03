@@ -20,10 +20,12 @@ public class TeamService {
 
 	// 获取团队
 	public Programmer[] getTeam() {
+		if (total == 0) {
+			return null;
+		}
 		Programmer[] res = new Programmer[total];
-		int count = 0;
-		for (Programmer p : team) {
-			res[count++] = p;
+		for(int i=0;i<total;++i) {
+			res[i]=team[i];
 		}
 		return res;
 	}
@@ -63,21 +65,21 @@ public class TeamService {
 				numOfPro++;
 			}
 		}
-		if(p instanceof Architect) {
-			if(numOfArc>=1) {
+		if (p instanceof Architect) {
+			if (numOfArc >= 1) {
 				throw new TeamException("团队中至多只能有一名架构师");
 			}
-		}else if (p instanceof Designer) {
-			if(numOfDes>=2) {
+		} else if (p instanceof Designer) {
+			if (numOfDes >= 2) {
 				throw new TeamException("团队中至多只能有两名设计师");
 			}
-		}else if(p instanceof Programmer) {
-			if(numOfPro>=3) {
-				throw new TeamException("团队中至多只能有三名程序员");	
+		} else if (p instanceof Programmer) {
+			if (numOfPro >= 3) {
+				throw new TeamException("团队中至多只能有三名程序员");
 			}
 		}
-		
-		//添加该成员到团队
+
+		// 添加该成员到团队
 		team[total++] = p;
 		p.setMemberId(counter++);
 		p.setStatus(Status.BUSY);
@@ -85,30 +87,35 @@ public class TeamService {
 
 	// 判断员工是否是该团队的成员
 	private boolean isExist(Employee e) {
-		for (Programmer p : team) {
-			if (p.getId() == e.getId())
+		if(total==0) {
+			return false;
+		}
+		
+		for(int i=0;i<total;++i) {
+			if(team[i].getId()==e.getId())
 				return true;
 		}
+
 		return false;
 	}
 
 	// 移除团队成员
 	public void removeMember(int memberId) throws TeamException {
 		int i = 0;
-		for(;i<total;++i) {
-			if(team[i].getMemberId()==memberId) {
+		for (; i < total; ++i) {
+			if (team[i].getMemberId() == memberId) {
 				team[i].setStatus(Status.FREE);
 				break;
 			}
 		}
-		if(i==total) {
+		if (i == total) {
 			throw new TeamException("找不到指定memberId的员工，删除失败");
 		}
 
-		for(int j=i;j<total-1;++j) {
-			team[j] = team[j+1];
+		for (int j = i; j < total - 1; ++j) {
+			team[j] = team[j + 1];
 		}
 		team[--total] = null;
 	}
-	
+
 }
