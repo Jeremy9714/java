@@ -40,6 +40,10 @@ public class Programmer extends Employee {
 		this.equipment = equipment;
 	}
 
+	public String getMemberMessage() {
+		return memberId + "/" + getDetails() + "\t程序员\t";
+	}
+
 	@Override
 	public String toString() {
 		// TODO 自动生成的方法存根

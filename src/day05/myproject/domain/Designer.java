@@ -19,6 +19,10 @@ public class Designer extends Programmer {
 		this.bonus = bonus;
 	}
 
+	public String getMemberMessage() {
+		return getMemberId() + "/" + getDetails() + "\t设计师\t" + bonus;
+	}
+
 	@Override
 	public String toString() {
 		return getDetails() + "\t设计师\t" + getStatus() + "\t" + bonus + "\t\t" + equipment.getDescription();

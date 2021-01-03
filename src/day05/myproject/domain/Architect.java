@@ -20,6 +20,10 @@ public class Architect extends Designer {
 		this.stock = stock;
 	}
 
+	public String getMemberMessage() {
+		return getMemberId() + "/" + getDetails() + "\t架构师\t" + bonus + "\t" + stock;
+	}
+
 	@Override
 	public String toString() {
 		return getDetails() + "\t架构师\t" + getStatus() + "\t" + bonus + "\t" + stock + "\t" + equipment.getDescription();
