@@ -6,11 +6,11 @@ public class Programmer extends Employee {
 	private int memberId;
 	private Status status;
 	private Equipment equipment;
-	
+
 	public Programmer() {
 		super();
 	}
-	
+
 	public Programmer(int id, String name, int age, double salary, Equipment equipment) {
 		super(id, name, age, salary);
 		this.equipment = equipment;
@@ -38,6 +38,12 @@ public class Programmer extends Employee {
 
 	public void setEquipment(Equipment equipment) {
 		this.equipment = equipment;
+	}
+
+	@Override
+	public String toString() {
+		// TODO 自动生成的方法存根
+		return super.toString() + "\t" + equipment.getDescription();
 	}
 
 }

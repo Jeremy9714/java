@@ -18,5 +18,10 @@ public class Designer extends Programmer {
 	public void setBonus(double bonus) {
 		this.bonus = bonus;
 	}
-
+	
+	@Override
+	public String toString() {
+		return super.toString() + "\t" + bonus;
+	}
+	
 }

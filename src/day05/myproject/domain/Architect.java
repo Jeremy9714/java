@@ -20,4 +20,9 @@ public class Architect extends Designer {
 		this.stock = stock;
 	}
 
+	@Override
+	public String toString() {
+		return super.toString() + "\t" + stock;
+	}
+
 }
