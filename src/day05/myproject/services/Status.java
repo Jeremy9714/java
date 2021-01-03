@@ -19,6 +19,6 @@ public class Status {
 	}
 	
 	public String toString() {
-		return getName();
+		return NAME;
 	}
 }
