@@ -1,7 +1,7 @@
 package day05.myproject.domain;
 
 public class Designer extends Programmer {
-	private double bonus;
+	protected double bonus;
 
 	public Designer() {
 	}
@@ -18,10 +18,10 @@ public class Designer extends Programmer {
 	public void setBonus(double bonus) {
 		this.bonus = bonus;
 	}
-	
+
 	@Override
 	public String toString() {
-		return super.toString() + "\t" + bonus;
+		return getDetails() + "\t设计师\t" + getStatus().getName() + "\t" + bonus + "\t\t" + equipment.getDescription();
 	}
-	
+
 }

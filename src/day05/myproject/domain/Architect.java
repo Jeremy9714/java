@@ -22,7 +22,7 @@ public class Architect extends Designer {
 
 	@Override
 	public String toString() {
-		return super.toString() + "\t" + stock;
+		return getDetails() + "\t架构师\t" + getStatus().getName() + "\t" + bonus + "\t" + stock + "\t" + equipment.getDescription();
 	}
 
 }

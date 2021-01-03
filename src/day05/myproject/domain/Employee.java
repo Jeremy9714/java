@@ -48,10 +48,14 @@ public class Employee {
 	public void setSalary(double salary) {
 		this.salary = salary;
 	}
-
+	
+	public String getDetails() {
+		return id + "\t" + name + "\t" + age + "\t" + salary;
+	}
+	
 	@Override
 	public String toString() {
-		return id + "\t" + name + "\t" + age + "\t" + salary;
+		return getDetails();
 	}
 
 }

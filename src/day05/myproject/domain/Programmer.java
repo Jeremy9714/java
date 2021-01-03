@@ -4,8 +4,8 @@ import day05.myproject.services.Status;
 
 public class Programmer extends Employee {
 	private int memberId;
-	private Status status;
-	private Equipment equipment;
+	protected Status status = Status.FREE;
+	protected Equipment equipment;
 
 	public Programmer() {
 		super();
@@ -43,7 +43,7 @@ public class Programmer extends Employee {
 	@Override
 	public String toString() {
 		// TODO 自动生成的方法存根
-		return super.toString() + "\t" + equipment.getDescription();
+		return getDetails() + "\t程序员\t" + getStatus().getName() + "\t\t\t" + equipment.getDescription();
 	}
 
 }
