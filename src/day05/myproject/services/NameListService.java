@@ -20,7 +20,10 @@ public class NameListService {
 			String name = EMPLOYEES[i][2];
 			int age = Integer.parseInt(EMPLOYEES[i][3]);
 			double salary = Double.parseDouble(EMPLOYEES[i][4]);
+			
 			Equipment equipment;
+			double bonus;
+			int stock;
 
 			switch (type) {
 			case EMPLOYEE:
@@ -32,13 +35,13 @@ public class NameListService {
 				break;
 			case DESIGNER:
 				equipment = createEquipment(i);
-				double bonus = Double.parseDouble(EMPLOYEES[i][5]);
+				bonus = Double.parseDouble(EMPLOYEES[i][5]);
 				employees[i] = new Designer(id, name, age, salary, equipment, bonus);
 				break;
 			case ARCHITECT:
 				equipment = createEquipment(i);
 				bonus = Double.parseDouble(EMPLOYEES[i][5]);
-				int stock = Integer.parseInt(EMPLOYEES[i][6]);
+				stock = Integer.parseInt(EMPLOYEES[i][6]);
 				employees[i] = new Architect(id, name, age, salary, equipment, bonus, stock);
 				break;
 			}
